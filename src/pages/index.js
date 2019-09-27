@@ -44,20 +44,18 @@ export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          id
-          frontmatter {
-            date
-            description
-            title
-          }
-          html
-          excerpt
+
+      nodes {
+        fields {
+          slug
         }
+        id
+        frontmatter {
+          date
+          title
+          featuredImage
+        }
+        excerpt
       }
     }
   }
